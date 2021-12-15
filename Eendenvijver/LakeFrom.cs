@@ -37,7 +37,7 @@ namespace Eendenvijver
 
             foreach (var stork in lake.getStorks())
             {
-                listBoxStorks.Items.Add(stork.Id.ToString());
+                listBoxStorks.Items.Add(stork.Id.ToString() + "    " + stork.Honger);
             }
         }
 
@@ -45,7 +45,7 @@ namespace Eendenvijver
         {
             lake.EatFrog();
             lake.age();
-            lake.DeleteDucks();
+            lake.Delete();
             lake.CreateDucks();
             lake.createFrogs();
             turn();

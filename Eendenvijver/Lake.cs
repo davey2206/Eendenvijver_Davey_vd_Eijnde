@@ -10,9 +10,10 @@ namespace Eendenvijver
     {
         Random rng = new Random();
         List<Duck> ducks = new List<Duck>();
-        List<Duck> toRemove = new List<Duck>();
+        List<Duck> toRemoveDucks = new List<Duck>();
         List<Frog> frogs = new List<Frog>();
         List<Stork> storks = new List<Stork>();
+        List<Stork> toRemoveStorks = new List<Stork>();
         int frogID = 1;
         int storkID = 1;
 
@@ -70,14 +71,15 @@ namespace Eendenvijver
                 }
                 if (duck.Age <= 0)
                 {
-                    toRemove.Add(duck);
+                    toRemoveDucks.Add(duck);
                 }
             }
         }
 
-        public void DeleteDucks()
+        public void Delete()
         {
-            ducks.RemoveAll(toRemove.Contains);
+            ducks.RemoveAll(toRemoveDucks.Contains);
+            storks.RemoveAll(toRemoveStorks.Contains);
         }
 
         public void CreateDucks()
@@ -181,18 +183,31 @@ namespace Eendenvijver
         {
             foreach (var stork in storks)
             {
+                stork.Honger--;
                 if (!(frogs.Count < 1))
                 {
-                    int r = rng.Next(1, frogs.Count);
-                    frogs.RemoveAt(r - 1);
-
-                    foreach (var frog in frogs)
+                    if (stork.Honger == 0)
                     {
-                        if (r == frog.Id)
-                        {
-                            stork.eat(frog);
+                        stork.Honger = 10;
+                        int r = rng.Next(1, frogs.Count);
+                        frogs.RemoveAt(r - 1);
 
+                        foreach (var frog in frogs)
+                        {
+                            if (r == frog.Id)
+                            {
+                                stork.eat(frog);
+
+                            }
                         }
+                    }
+
+                }
+                else
+                {
+                    if (stork.Honger == 0)
+                    {
+                        toRemoveStorks.Add(stork);
                     }
                 }
             }
