@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Eendenvijver
+﻿namespace Eendenvijver
 {
-    class Frog
+    internal class Frog
     {
         private int id;
         private bool dead = false;
@@ -16,6 +10,7 @@ namespace Eendenvijver
             get { return dead; }
             set { dead = value; }
         }
+
         public int Id
         {
             get { return id; }

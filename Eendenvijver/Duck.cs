@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Eendenvijver
+﻿namespace Eendenvijver
 {
     public enum Gender
     {
@@ -12,7 +6,7 @@ namespace Eendenvijver
         male
     }
 
-    class Duck
+    internal class Duck
     {
         private int age = 100;
         private Gender gender;
@@ -22,6 +16,7 @@ namespace Eendenvijver
             get { return age; }
             set { age = value; }
         }
+
         public Gender Gender
         {
             get { return gender; }

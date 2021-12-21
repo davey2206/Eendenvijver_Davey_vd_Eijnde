@@ -1,18 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Eendenvijver
 {
     public partial class LakeFrom : Form
     {
-        Lake lake = new Lake();
+        private Lake lake = new Lake();
+
         public LakeFrom()
         {
             InitializeComponent();

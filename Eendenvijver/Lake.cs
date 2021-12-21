@@ -1,24 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Eendenvijver
 {
-    class Lake
+    internal class Lake
     {
-        Random rng = new Random();
-        List<Duck> ducks = new List<Duck>();
-        List<Duck> toRemoveDucks = new List<Duck>();
-        List<Frog> frogs = new List<Frog>();
-        List<Stork> storks = new List<Stork>();
-        List<Stork> toRemoveStorks = new List<Stork>();
-        List<Frog> toRemoveFrogs = new List<Frog>();
-        int frogID = 1;
-        int storkID = 1;
+        private Random rng = new Random();
+        private List<Duck> ducks = new List<Duck>();
+        private List<Duck> toRemoveDucks = new List<Duck>();
+        private List<Frog> frogs = new List<Frog>();
+        private List<Stork> storks = new List<Stork>();
+        private List<Stork> toRemoveStorks = new List<Stork>();
+        private List<Frog> toRemoveFrogs = new List<Frog>();
+        private int frogID = 1;
+        private int storkID = 1;
 
         #region wordt niet meer gebruikt
+
         public void CreateLake()
         {
             for (int i = 1; i < 27; i++)
@@ -33,10 +31,11 @@ namespace Eendenvijver
 
             for (int i = 1; i < 3; i++)
             {
-                storks.Add(new Stork(i, rng.Next(1,11)));
+                storks.Add(new Stork(i, rng.Next(1, 11)));
             }
         }
-        #endregion
+
+        #endregion wordt niet meer gebruikt
 
         public List<Duck> getDucks()
         {
@@ -57,15 +56,17 @@ namespace Eendenvijver
         {
             foreach (var duck in ducks)
             {
-                int r = rng.Next(1,4);
+                int r = rng.Next(1, 4);
                 switch (r)
                 {
                     case 1:
                         duck.Age = duck.Age - 1;
                         break;
+
                     case 2:
                         duck.Age = duck.Age - 5;
                         break;
+
                     case 3:
                         duck.Age = duck.Age - 10;
                         break;
@@ -130,10 +131,10 @@ namespace Eendenvijver
                 }
             }
         }
-        
+
         public void createFrogs()
         {
-            if (rng.Next(1,5) == 1)
+            if (rng.Next(1, 5) == 1)
             {
                 if (!(frogs.Count <= 1))
                 {
@@ -158,7 +159,7 @@ namespace Eendenvijver
         {
             for (int i = 0; i < n; i++)
             {
-                storks.Add(new Stork(storkID++, rng.Next(1,11)));
+                storks.Add(new Stork(storkID++, rng.Next(1, 11)));
             }
         }
 

@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Eendenvijver
+﻿namespace Eendenvijver
 {
-    class Stork
+    internal class Stork
     {
         private int id;
         private int honger = 10;
+
         public int Id
         {
             get { return id; }
@@ -26,6 +21,7 @@ namespace Eendenvijver
             id = i;
             honger = h;
         }
+
         public void eat(Frog f)
         {
             f.Dead = true;
