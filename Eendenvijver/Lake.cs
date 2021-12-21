@@ -14,6 +14,7 @@ namespace Eendenvijver
         List<Frog> frogs = new List<Frog>();
         List<Stork> storks = new List<Stork>();
         List<Stork> toRemoveStorks = new List<Stork>();
+        List<Frog> toRemoveFrogs = new List<Frog>();
         int frogID = 1;
         int storkID = 1;
 
@@ -32,7 +33,7 @@ namespace Eendenvijver
 
             for (int i = 1; i < 3; i++)
             {
-                storks.Add(new Stork(i));
+                storks.Add(new Stork(i, rng.Next(1,11)));
             }
         }
         #endregion
@@ -80,6 +81,7 @@ namespace Eendenvijver
         {
             ducks.RemoveAll(toRemoveDucks.Contains);
             storks.RemoveAll(toRemoveStorks.Contains);
+            frogs.RemoveAll(toRemoveFrogs.Contains);
         }
 
         public void CreateDucks()
@@ -131,12 +133,15 @@ namespace Eendenvijver
         
         public void createFrogs()
         {
-            if (!(frogs.Count <= 1))
+            if (rng.Next(1,5) == 1)
             {
-                int r = rng.Next(1,4);
-                for (int i = 0; i < r; i++)
+                if (!(frogs.Count <= 1))
                 {
-                    frogs.Add(new Frog(frogID++));
+                    int r = rng.Next(1, 3);
+                    for (int i = 0; i < r; i++)
+                    {
+                        frogs.Add(new Frog(frogID++));
+                    }
                 }
             }
         }
@@ -153,7 +158,7 @@ namespace Eendenvijver
         {
             for (int i = 0; i < n; i++)
             {
-                storks.Add(new Stork(storkID++));
+                storks.Add(new Stork(storkID++, rng.Next(1,11)));
             }
         }
 
@@ -189,19 +194,16 @@ namespace Eendenvijver
                     if (stork.Honger == 0)
                     {
                         stork.Honger = 10;
-                        int r = rng.Next(1, frogs.Count);
-                        frogs.RemoveAt(r - 1);
-
-                        foreach (var frog in frogs)
+                        int r = rng.Next(0, frogs.Count);
+                        stork.eat(frogs[r]);
+                    }
+                    foreach (var frog in frogs)
+                    {
+                        if (frog.Dead)
                         {
-                            if (r == frog.Id)
-                            {
-                                stork.eat(frog);
-
-                            }
+                            toRemoveFrogs.Add(frog);
                         }
                     }
-
                 }
                 else
                 {

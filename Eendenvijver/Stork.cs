@@ -21,13 +21,14 @@ namespace Eendenvijver
             set { honger = value; }
         }
 
-        public Stork(int i)
+        public Stork(int i, int h)
         {
             id = i;
+            honger = h;
         }
         public void eat(Frog f)
         {
-            f = null;
+            f.Dead = true;
         }
     }
 }
