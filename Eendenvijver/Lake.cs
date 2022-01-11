@@ -7,35 +7,10 @@ namespace Eendenvijver
     {
         private Random rng = new Random();
         private List<Duck> ducks = new List<Duck>();
-        private List<Duck> toRemoveDucks = new List<Duck>();
         private List<Frog> frogs = new List<Frog>();
         private List<Stork> storks = new List<Stork>();
-        private List<Stork> toRemoveStorks = new List<Stork>();
-        private List<Frog> toRemoveFrogs = new List<Frog>();
         private int frogID = 1;
         private int storkID = 1;
-
-        #region wordt niet meer gebruikt
-
-        public void CreateLake()
-        {
-            for (int i = 1; i < 27; i++)
-            {
-                rngGender();
-            }
-
-            for (int i = 1; i < 20; i++)
-            {
-                frogs.Add(new Frog(frogID++));
-            }
-
-            for (int i = 1; i < 3; i++)
-            {
-                storks.Add(new Stork(i, rng.Next(1, 11)));
-            }
-        }
-
-        #endregion wordt niet meer gebruikt
 
         public List<Duck> getDucks()
         {
@@ -52,37 +27,17 @@ namespace Eendenvijver
             return storks;
         }
 
-        public void age()
+        public void checkDuck()
         {
+            List<Duck> toRemoveDucks = new List<Duck>();
             foreach (var duck in ducks)
             {
-                int r = rng.Next(1, 4);
-                switch (r)
-                {
-                    case 1:
-                        duck.Age = duck.Age - 1;
-                        break;
-
-                    case 2:
-                        duck.Age = duck.Age - 5;
-                        break;
-
-                    case 3:
-                        duck.Age = duck.Age - 10;
-                        break;
-                }
-                if (duck.Age <= 0)
+                if (duck.ageDuck(rng.Next(1,4)))
                 {
                     toRemoveDucks.Add(duck);
                 }
             }
-        }
-
-        public void Delete()
-        {
             ducks.RemoveAll(toRemoveDucks.Contains);
-            storks.RemoveAll(toRemoveStorks.Contains);
-            frogs.RemoveAll(toRemoveFrogs.Contains);
         }
 
         public void CreateDucks()
@@ -112,7 +67,7 @@ namespace Eendenvijver
                         int r = rng.Next(5);
                         if (r == 1)
                         {
-                            rngGender();
+                            ducks.Add(new Duck(rng.Next(0, 2)));
                         }
                     }
                 }
@@ -125,7 +80,7 @@ namespace Eendenvijver
                         int r = rng.Next(5);
                         if (r == 1)
                         {
-                            rngGender();
+                            ducks.Add(new Duck(rng.Next(0, 2)));
                         }
                     }
                 }
@@ -167,26 +122,14 @@ namespace Eendenvijver
         {
             for (int i = 0; i < n; i++)
             {
-                rngGender();
+                ducks.Add(new Duck(rng.Next(0, 2)));
             }
-        }
-
-        public void rngGender()
-        {
-            int g;
-            if (rng.Next(0, 2) == 1)
-            {
-                g = 0;
-            }
-            else
-            {
-                g = 1;
-            }
-            ducks.Add(new Duck(g));
         }
 
         public void EatFrog()
         {
+            List<Frog> toRemoveFrogs = new List<Frog>();
+            List<Stork> toRemoveStorks = new List<Stork>();
             foreach (var stork in storks)
             {
                 stork.Honger--;
@@ -214,6 +157,8 @@ namespace Eendenvijver
                     }
                 }
             }
+            storks.RemoveAll(toRemoveStorks.Contains);
+            frogs.RemoveAll(toRemoveFrogs.Contains);
         }
     }
 }

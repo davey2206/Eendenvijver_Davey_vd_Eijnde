@@ -53,52 +53,61 @@ namespace Eendenvijver
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(146, 57);
+            this.label1.Location = new System.Drawing.Point(195, 70);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(30, 13);
+            this.label1.Size = new System.Drawing.Size(40, 17);
             this.label1.TabIndex = 3;
             this.label1.Text = "frogs";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(385, 57);
+            this.label2.Location = new System.Drawing.Point(513, 70);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.Size = new System.Drawing.Size(46, 17);
             this.label2.TabIndex = 4;
             this.label2.Text = "storks";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(611, 57);
+            this.label3.Location = new System.Drawing.Point(815, 70);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(36, 13);
+            this.label3.Size = new System.Drawing.Size(45, 17);
             this.label3.TabIndex = 5;
             this.label3.Text = "ducks";
             // 
             // listBoxDucks
             // 
             this.listBoxDucks.FormattingEnabled = true;
-            this.listBoxDucks.Location = new System.Drawing.Point(546, 73);
+            this.listBoxDucks.ItemHeight = 16;
+            this.listBoxDucks.Location = new System.Drawing.Point(728, 90);
+            this.listBoxDucks.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.listBoxDucks.Name = "listBoxDucks";
-            this.listBoxDucks.Size = new System.Drawing.Size(174, 329);
+            this.listBoxDucks.Size = new System.Drawing.Size(231, 404);
             this.listBoxDucks.TabIndex = 6;
             // 
             // listBoxStorks
             // 
             this.listBoxStorks.FormattingEnabled = true;
-            this.listBoxStorks.Location = new System.Drawing.Point(317, 73);
+            this.listBoxStorks.ItemHeight = 16;
+            this.listBoxStorks.Location = new System.Drawing.Point(423, 90);
+            this.listBoxStorks.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.listBoxStorks.Name = "listBoxStorks";
-            this.listBoxStorks.Size = new System.Drawing.Size(174, 329);
+            this.listBoxStorks.Size = new System.Drawing.Size(231, 404);
             this.listBoxStorks.TabIndex = 7;
             // 
             // listBoxFrogs
             // 
             this.listBoxFrogs.FormattingEnabled = true;
-            this.listBoxFrogs.Location = new System.Drawing.Point(78, 73);
+            this.listBoxFrogs.ItemHeight = 16;
+            this.listBoxFrogs.Location = new System.Drawing.Point(104, 90);
+            this.listBoxFrogs.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.listBoxFrogs.Name = "listBoxFrogs";
-            this.listBoxFrogs.Size = new System.Drawing.Size(174, 329);
+            this.listBoxFrogs.Size = new System.Drawing.Size(231, 404);
             this.listBoxFrogs.TabIndex = 8;
             // 
             // timer1
@@ -107,9 +116,10 @@ namespace Eendenvijver
             // 
             // btnStart
             // 
-            this.btnStart.Location = new System.Drawing.Point(246, 415);
+            this.btnStart.Location = new System.Drawing.Point(328, 511);
+            this.btnStart.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(75, 23);
+            this.btnStart.Size = new System.Drawing.Size(100, 28);
             this.btnStart.TabIndex = 9;
             this.btnStart.Text = "Start";
             this.btnStart.UseVisualStyleBackColor = true;
@@ -117,9 +127,10 @@ namespace Eendenvijver
             // 
             // btnStop
             // 
-            this.btnStop.Location = new System.Drawing.Point(480, 415);
+            this.btnStop.Location = new System.Drawing.Point(640, 511);
+            this.btnStop.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnStop.Name = "btnStop";
-            this.btnStop.Size = new System.Drawing.Size(75, 23);
+            this.btnStop.Size = new System.Drawing.Size(100, 28);
             this.btnStop.TabIndex = 10;
             this.btnStop.Text = "Stop";
             this.btnStop.UseVisualStyleBackColor = true;
@@ -127,30 +138,34 @@ namespace Eendenvijver
             // 
             // frogCounter
             // 
-            this.frogCounter.Location = new System.Drawing.Point(103, 21);
+            this.frogCounter.Location = new System.Drawing.Point(143, 26);
+            this.frogCounter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.frogCounter.Name = "frogCounter";
-            this.frogCounter.Size = new System.Drawing.Size(120, 20);
+            this.frogCounter.Size = new System.Drawing.Size(160, 22);
             this.frogCounter.TabIndex = 11;
             // 
             // storksCounter
             // 
-            this.storksCounter.Location = new System.Drawing.Point(345, 21);
+            this.storksCounter.Location = new System.Drawing.Point(472, 26);
+            this.storksCounter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.storksCounter.Name = "storksCounter";
-            this.storksCounter.Size = new System.Drawing.Size(120, 20);
+            this.storksCounter.Size = new System.Drawing.Size(160, 22);
             this.storksCounter.TabIndex = 12;
             // 
             // ducksCounter
             // 
-            this.ducksCounter.Location = new System.Drawing.Point(570, 21);
+            this.ducksCounter.Location = new System.Drawing.Point(783, 26);
+            this.ducksCounter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ducksCounter.Name = "ducksCounter";
-            this.ducksCounter.Size = new System.Drawing.Size(120, 20);
+            this.ducksCounter.Size = new System.Drawing.Size(160, 22);
             this.ducksCounter.TabIndex = 13;
             // 
             // btnDucks
             // 
-            this.btnDucks.Location = new System.Drawing.Point(713, 18);
+            this.btnDucks.Location = new System.Drawing.Point(951, 22);
+            this.btnDucks.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnDucks.Name = "btnDucks";
-            this.btnDucks.Size = new System.Drawing.Size(75, 23);
+            this.btnDucks.Size = new System.Drawing.Size(100, 28);
             this.btnDucks.TabIndex = 14;
             this.btnDucks.Text = "add ducks";
             this.btnDucks.UseVisualStyleBackColor = true;
@@ -158,9 +173,10 @@ namespace Eendenvijver
             // 
             // btnStorks
             // 
-            this.btnStorks.Location = new System.Drawing.Point(480, 21);
+            this.btnStorks.Location = new System.Drawing.Point(640, 22);
+            this.btnStorks.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnStorks.Name = "btnStorks";
-            this.btnStorks.Size = new System.Drawing.Size(75, 23);
+            this.btnStorks.Size = new System.Drawing.Size(100, 28);
             this.btnStorks.TabIndex = 15;
             this.btnStorks.Text = "add storks";
             this.btnStorks.UseVisualStyleBackColor = true;
@@ -168,9 +184,10 @@ namespace Eendenvijver
             // 
             // btnFrog
             // 
-            this.btnFrog.Location = new System.Drawing.Point(246, 18);
+            this.btnFrog.Location = new System.Drawing.Point(311, 22);
+            this.btnFrog.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnFrog.Name = "btnFrog";
-            this.btnFrog.Size = new System.Drawing.Size(75, 23);
+            this.btnFrog.Size = new System.Drawing.Size(100, 28);
             this.btnFrog.TabIndex = 16;
             this.btnFrog.Text = "add frogs";
             this.btnFrog.UseVisualStyleBackColor = true;
@@ -178,9 +195,9 @@ namespace Eendenvijver
             // 
             // LakeFrom
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.btnFrog);
             this.Controls.Add(this.btnStorks);
             this.Controls.Add(this.btnDucks);
@@ -195,6 +212,7 @@ namespace Eendenvijver
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "LakeFrom";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.frogCounter)).EndInit();

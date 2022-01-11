@@ -1,4 +1,5 @@
-﻿namespace Eendenvijver
+﻿using System;
+namespace Eendenvijver
 {
     public enum Gender
     {
@@ -23,8 +24,18 @@
             set { gender = value; }
         }
 
-        public Duck(int g)
+        public Duck(int r)
         {
+            int g;
+            if (r == 1)
+            {
+                g = 0;
+            }
+            else
+            {
+                g = 1;
+            }
+
             if (g == 0)
             {
                 gender = Gender.male;
@@ -33,6 +44,29 @@
             {
                 gender = Gender.female;
             }
+        }
+
+        public bool ageDuck(int r)
+        {
+            switch (r)
+            {
+                case 1:
+                    age = age - 1;
+                    break;
+
+                case 2:
+                    age = age - 5;
+                    break;
+
+                case 3:
+                    age = age - 10;
+                    break;
+            }
+            if (age <= 0)
+            {
+                return true;
+            }
+            return false;
         }
     }
 }

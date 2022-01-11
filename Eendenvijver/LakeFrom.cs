@@ -38,8 +38,7 @@ namespace Eendenvijver
         private void timer1_Tick(object sender, EventArgs e)
         {
             lake.EatFrog();
-            lake.age();
-            lake.Delete();
+            lake.checkDuck();
             lake.CreateDucks();
             lake.createFrogs();
             turn();
